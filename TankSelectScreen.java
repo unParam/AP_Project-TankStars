@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.mygdx.game.Screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -16,7 +16,7 @@ public class TankSelectScreen implements Screen {
     private AssetManager manager;
     private OrthographicCamera camera;
 
-    Sprite  TankSelectScreenSprite1, TankSelectScreenSprite2, TankSelectScreenSprite3, TankSelectScreenSprite4,
+    private Sprite  TankSelectScreenSprite1, TankSelectScreenSprite2, TankSelectScreenSprite3, TankSelectScreenSprite4,
             TankSelectScreenSprite5, TankSelectScreenSprite6, TankSelectScreenSprite7, TankSelectScreenSprite8,
             TankSelectScreenSprite9, TankSelectScreenGenericSprite, AbramsSprite, BuratinoSprite, FrostSprite, TankSprite;
 
@@ -24,11 +24,19 @@ public class TankSelectScreen implements Screen {
     private boolean isSoundON;
     private Sound clickSound, drumSound;
     private int TankID = 1;
-    private int TankID1 = 1;
-    private int TankID2 = 1;
+    private static int TankID1 = 1;
+    private static int TankID2 = 1;
     private boolean ready1 = false;
     private boolean ready2 = false;
     private GlyphLayout layout1, layout2;
+
+    public static int getTankID1() {
+        return TankID1;
+    }
+
+    public static int getTankID2() {
+        return TankID2;
+    }
 
     public TankSelectScreen(final TankStars game, AssetManager Manager) {
         this.game = game;
@@ -156,6 +164,7 @@ public class TankSelectScreen implements Screen {
             if(ready1 && ready2){
                 if(isSoundON) drumSound.play();
                 TankStars.stopMusic();
+                TankStars.gameScreen = new GameScreen(game, manager);
                 game.setScreen(TankStars.gameScreen);
             }
         }

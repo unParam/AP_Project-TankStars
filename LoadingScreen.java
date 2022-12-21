@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.mygdx.game.Screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -20,10 +20,10 @@ public class LoadingScreen implements Screen {
     private OrthographicCamera camera;
     private Sprite LoadingScreenSprite, LoadingScreenSprite1, LoadingScreenSprite2, LoadingScreenSprite3,
             LoadingScreenSprite4, LoadingScreenSprite5, LoadingScreenSpriteGeneric;
-    float LifeTime = 0;
+    private float LifeTime = 0;
 
     private GlyphLayout layout;
-    int count = 0, countChange = 1;
+    private int count = 0, countChange = 1;
     private float percentLoaded;
     private boolean ScreensCreated = false;
 
@@ -71,12 +71,6 @@ public class LoadingScreen implements Screen {
         manager.load("Main Menu\\Save Game Screen\\3.png", Texture.class);
         manager.load("Main Menu\\Save Game Screen\\4.png", Texture.class);
 
-        manager.load("Audio\\Main Menu BGM.mp3", Music.class);
-
-        manager.load("Audio\\Click.mp3", Sound.class);
-        manager.load("Audio\\Back.mp3", Sound.class);
-        manager.load("Audio\\Drumroll.mp3", Sound.class);
-
         manager.load("Main Menu\\Tank Select Screen\\1.png", Texture.class);
         manager.load("Main Menu\\Tank Select Screen\\2.png", Texture.class);
         manager.load("Main Menu\\Tank Select Screen\\3.png", Texture.class);
@@ -86,6 +80,26 @@ public class LoadingScreen implements Screen {
         manager.load("Main Menu\\Tank Select Screen\\7.png", Texture.class);
         manager.load("Main Menu\\Tank Select Screen\\8.png", Texture.class);
         manager.load("Main Menu\\Tank Select Screen\\9.png", Texture.class);
+
+        manager.load("Game Screen\\Pause Screen\\0.png", Texture.class);
+        manager.load("Game Screen\\Pause Screen\\1.png", Texture.class);
+        manager.load("Game Screen\\Pause Screen\\2.png", Texture.class);
+        manager.load("Game Screen\\Pause Screen\\3.png", Texture.class);
+        manager.load("Game Screen\\Pause Screen\\4.png", Texture.class);
+
+        manager.load("Game Screen\\Game Over Screen\\0.png", Texture.class);
+        manager.load("Game Screen\\Game Over Screen\\1.png", Texture.class);
+        manager.load("Game Screen\\Game Over Screen\\2.png", Texture.class);
+
+        manager.load("Audio\\Main Menu BGM.mp3", Music.class);
+        manager.load("Audio\\Game BGM.mp3", Music.class);
+
+        manager.load("Audio\\Click.mp3", Sound.class);
+        manager.load("Audio\\Back.mp3", Sound.class);
+        manager.load("Audio\\Drumroll.mp3", Sound.class);
+        manager.load("Audio\\TankMove.wav", Sound.class);
+        manager.load("Audio\\FuelEmpty.mp3", Sound.class);
+
 
         manager.load("Tanks\\Abrams.png", Texture.class);
         manager.load("Tanks\\Buratino.png", Texture.class);
@@ -129,7 +143,6 @@ public class LoadingScreen implements Screen {
             TankStars.mainMenuScreen = new MainMenuScreen(game, manager);
             TankStars.saveGameScreen = new SaveGameScreen(game, manager);
             TankStars.tankSelectScreen = new TankSelectScreen(game, manager);
-            TankStars.gameScreen = new GameScreen();
             ScreensCreated = true;
         }
 

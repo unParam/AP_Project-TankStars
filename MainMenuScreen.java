@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.mygdx.game.Screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -102,7 +102,6 @@ public class MainMenuScreen implements Screen {
                 else if (MainMenuScreenGenericSprite == MainMenuScreenSprite3) {
                     if(isSoundON) clickSound.play();
                     TankStars.stopMusic();
-                    dispose();
                     Gdx.app.exit();
                 }
                 else if (MainMenuScreenGenericSprite == MainMenuScreenSprite4) {

@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.mygdx.game.Screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -15,7 +15,7 @@ public class SaveGameScreen implements Screen {
     private AssetManager manager;
     private OrthographicCamera camera;
 
-    Sprite SaveGameScreenSprite, SaveGameScreenSprite1, SaveGameScreenSprite2,
+    private Sprite SaveGameScreenSprite, SaveGameScreenSprite1, SaveGameScreenSprite2,
             SaveGameScreenSprite3, SaveGameScreenSprite4, SaveGameScreenGenericSprite;
 
     int X,Y;
